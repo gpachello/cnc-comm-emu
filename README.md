@@ -73,6 +73,37 @@ Your emulator will now accept FOCAS TCP connections on **localhost:8193**
 
 ---
 
+### Quick test
+
+```bash
+docker compose ps
+```
+
+You should see the ```cnc-comm-emu``` service running:
+
+```bash
+NAME           IMAGE                 COMMAND                  SERVICE        CREATED          STATUS         PORTS
+cnc-comm-emu   cnc-comm-emu:latest   "./fanuc/src/fanuc-s…"   cnc-comm-emu   45 seconds ago   Up 9 seconds   0.0.0.0:8193->8193/tcp
+```
+
+To verify the emulator is responding:
+```bash
+printf "GET PART_COUNT" | nc localhost 8193
+```
+
+Expected output:
+```bash
+PART=100
+```
+
+
+
+> [!Note]
+> These commands work on Linux, macOS, and WSL2.  
+> On Windows (PowerShell), replace printf with echo -n.
+
+---
+
 ### Roadmap (short)
 
 Future expansions may include:
