@@ -1,0 +1,11 @@
+services:
+  cnc-comm-emu:
+    build: .
+    container_name: cnc-comm-emu
+    image: cnc-comm-emu:latest
+    ports:
+      - "8193:8193"                                # FANUC FOCAS2
+    restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro           # Sync localtime
+      - /etc/timezone:/etc/timezone:ro             # Sync timezone
