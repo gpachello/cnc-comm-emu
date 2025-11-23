@@ -28,11 +28,11 @@ This emulator implements the **last link** in the MTConnect communication path, 
 
 ```
 Subscriber (HTTP client)
-⇅ TCP 5000
+  ⇅ TCP 5000
 MTConnect Agent
-⇅ TCP 7878
+  ⇅ TCP 7878
 MTConnect Adapter
-⇅ TCP 8193
+  ⇅ TCP 8193
 CNC Device (FOCAS) ← (this project)
 ```
 
